@@ -34,6 +34,8 @@ include_directories(
 
 add_executable(subscriber_cpp src/subscriber_cpp.cpp)
 add_executable(publisher_cpp src/publisher_cpp.cpp)
+add_executable(client_cpp src/client_cpp.cpp)
+add_executable(server_cpp src/server_cpp.cpp)
 
 ## dependency setting
 
@@ -43,8 +45,18 @@ add_dependencies(publisher_cpp
 add_dependencies(subscriber_cpp
   ${${PROJECT_NAME}_EXPORTED_TARGETS}
   ${catkin_EXPORTED_TARGETS})
+add_dependencies(server_cpp
+  ${${PROJECT_NAME}_EXPORTED_TARGETS}
+  ${catkin_EXPORTED_TARGETS})
+add_dependencies(client_cpp
+  ${${PROJECT_NAME}_EXPORTED_TARGETS}
+  ${catkin_EXPORTED_TARGETS})
 
 target_link_libraries(publisher_cpp
   ${catkin_LIBRARIES})
 target_link_libraries(subscriber_cpp
+  ${catkin_LIBRARIES})
+target_link_libraries(server_cpp
+  ${catkin_LIBRARIES})
+target_link_libraries(client_cpp
   ${catkin_LIBRARIES})
