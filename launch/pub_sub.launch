@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="ros_study1" type="publisher_py.py" name="publisher_py_node" respawn="true"/>
+  <node pkg="ros_study1" type="subscriber_cpp" name="subscriber_cpp_node" output="screen"/>
+</launch>
